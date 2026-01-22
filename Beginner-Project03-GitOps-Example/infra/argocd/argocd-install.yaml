@@ -1,0 +1,8 @@
+# Minimal Argo CD install (adapt from official manifests for real use)
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: argocd
+---
+# In a real setup, import the official Argo CD install here.
+# This file is just a placeholder to show where Argo CD manifests would live.
