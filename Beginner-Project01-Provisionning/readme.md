@@ -142,7 +142,7 @@ end
 
 ---
 
-> This project consists of having you automate the [Server](https://github.com/buflallo/Club-cloud/tree/main/Beginner-00-Virtualization) you made as a first project.
+> This project consists of having you automate the [Server](https://github.com/buflallo/Club-cloud/tree/main/Beginner-Project00-Virtualization) you made as a first project.
 
 * You are only allowed to use Vagrant as an automation tool, and VirtualBox as Vagrant provider.
 
