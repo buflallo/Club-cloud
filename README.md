@@ -51,5 +51,5 @@ _*Welcome to the CC club resource for **learning DevOps through hands-on project
 
 </p>
 <p align="center">
-<img src="https://github.com/com/buflallo/Club-cloud/blob/main/imgs/flowchart.png" width="1100">
+<img src="https://github.com/buflallo/Club-cloud/blob/main/imgs/flowchart.png" width="1100">
 </p>
