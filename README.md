@@ -22,6 +22,16 @@ _*Welcome to the CC club resource for **learning DevOps through hands-on project
 > - **Intermediate Projects:** More complex projects that require a good understanding of Cloud/DevOps fundamentals.
 > - **Advanced Projects:** Challenging projects designed to push your limits and deepen your understanding of sophisticated Cloud/DevOps practices.
 
+### Beginner Fundamentals Track
+
+- **Project 00 - Virtualization:** Build and secure a Linux server in a VM.
+- **Project 01 - Provisioning:** Rebuild the server automatically with Vagrant.
+- **Project 02 - Containerization:** Run a multi-service application with Docker and Docker Compose.
+- **Project 03 - Kubernetes with K3s/K3d:** Move from containers to Kubernetes, GitOps, logging, and cluster hygiene.
+- **Project 04 - Kubernetes with kubeadm:** Bootstrap and operate a standard multi-node Kubernetes cluster.
+- **Project 05 - Cloud Primitives and IaC:** Model cloud infrastructure locally with Terraform and Docker.
+- **Project 06 - Delivery and Observability:** Build a release pipeline and expose useful runtime signals.
+
 ---
 
 ## Integration of Cloud/DevOps Technology with Other Technologies

@@ -23,7 +23,7 @@ This is where Kubernetes stops being “magic” and starts making sense.
 * Container runtime (containerd)
 * CNI (Calico or Flannel)
 * NGINX Ingress Controller
-* Helm (optional)
+* Helm
 * GitHub (for configs)
 * Argo CD (GitOps part)
 
@@ -114,6 +114,11 @@ Now that you have a real Kubernetes cluster, you will deploy **three application
 * 3 Services (ClusterIP or NodePort)
 * 1 Ingress resource
 * 1 Ingress Controller (NGINX)
+* 1 namespace dedicated to these applications
+* Readiness and liveness probes for every application
+* CPU and memory requests/limits for every Pod
+* At least one NetworkPolicy that blocks unwanted traffic
+* One of the three applications packaged as a Helm chart
 
 ---
 
@@ -139,6 +144,21 @@ They must resolve to the master IP:
 3. Create an Ingress rule
 4. Add `/etc/hosts` entries
 5. Verify routing in the browser
+
+### No Regression From Project 03
+
+This project must not be a weaker repeat of Project 03. Moving from K3s to kubeadm should make Kubernetes clearer, not remove engineering hygiene.
+
+You must keep:
+
+* namespaces instead of deploying everything in `default`
+* meaningful probes
+* resource requests and limits
+* basic NetworkPolicy isolation
+* manifests tracked in Git
+* a short explanation of what changed between K3s and kubeadm
+
+Helm is mandatory for one application because the core curriculum expects students to understand chart authoring, values, and repeatable deployment templates.
 
 ---
 
@@ -169,15 +189,44 @@ Your cluster must:
 * Self-heal on drift
 * Be observable via Argo CD UI
 
+You must also explain what Argo CD is allowed to change and what it must not change.
+
 ---
+
+## Deliverables
+
+Your repository must include:
+
+* Vagrantfile or VM setup notes for the 3-node cluster
+* scripts or documented steps for installing containerd, kubeadm, kubelet, kubectl, and CNI
+* Kubernetes manifests for all apps, services, ingress, namespace, resources, probes, and NetworkPolicies
+* one Helm chart for one app
+* Argo CD application manifest
+* README explaining verification steps and failure cases
+
+---
+
+## Evaluation Focus
+
+Be ready to explain:
+
+* what kubeadm does during cluster bootstrap
+* why swap must be disabled
+* what CNI does and how Pod networking works
+* how a worker joins the cluster
+* how ingress reaches a service
+* what your Helm values control
+* how Argo CD detects and repairs drift
+* which security rules protect the app namespace
+
+Booting three VMs is not enough. A working cluster with weak manifests is not enough.
 
 ## Bonus Challenges (Optional but 🔥)
 
 * Add TLS with cert-manager
 * Add Horizontal Pod Autoscaler
 * Install Prometheus + Grafana
-* Create a Helm chart for one app
-* Add a NetworkPolicy
+* Add stricter egress NetworkPolicies
 
 ---
 
